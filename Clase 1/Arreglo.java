@@ -10,11 +10,17 @@ public class Arreglo {
        System.out.println("a[1]=" + a[1]);
 
        System.out.println("Tamaño del arreglo a: " + a.length);
-
        for (int i = 0; i < a.length; i++){
            System.out.println("a[" + i + "]=" + a[i]);
        } 
-      }
+      
     
-       
-}
+      //Ejercicio de sumar todos los elementos 
+      int suma = 0;
+      for (int i = 0; i < a.length; i++){
+        suma += a[i];
+      System.out.println("La suma de todos los elementos del arreglo [a] es:" + suma);
+    
+       }
+    }   
+} 
