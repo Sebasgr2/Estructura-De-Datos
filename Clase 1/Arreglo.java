@@ -16,11 +16,38 @@ public class Arreglo {
       
     
       //Ejercicio de sumar todos los elementos 
-      int suma = 0;
+      int suma1 = 0;
       for (int i = 0; i < a.length; i++){
-        suma += a[i];
-      System.out.println("La suma de todos los elementos del arreglo [a] es:" + suma);
+        suma1 += a[i];
+      System.out.println("La suma de todos los elementos del arreglo [a] es:" + suma1);
     
        }
+
+    //Ejercicios
+    /*
+    Obtener la suma de los numeros pares y los numeros impares
+    
+    Mostrar los elementos que ha en las posciones pares del arreglo
+    */
+
+    int suma = 0;
+      for (int i : a){
+        if (i % 2 == 0){
+          suma += i;
+        }
+      }
+    
+    int suma2 = 0;
+      for (int i : a){
+        if(i % 2 == 1){
+
+        suma2 += i;
+        }
+      }
+      
+    System.out.println("La suma de los numeros pares es:" + suma);
+    System.out.println("La suma de los numeros impares es:" + suma2);
+
+
     }   
 } 
