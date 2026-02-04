@@ -48,6 +48,12 @@ public class Arreglo {
     System.out.println("La suma de los numeros pares es:" + suma);
     System.out.println("La suma de los numeros impares es:" + suma2);
 
+    
+  for(int i = 0; i < a.length; i += 2) {
+    System.out.println("Posicion par" + i + ":" + a[i]);
+  }
+
+
 
     }   
 } 
