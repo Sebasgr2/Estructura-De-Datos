@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class LogisticaJH {
 
@@ -9,6 +10,7 @@ public class LogisticaJH {
 
         Scanner leer = new Scanner(System.in);
         int opcion = 0;
+        Random aleatorio = new Random();
 
         while (opcion != 5) {
             System.out.println("\n ---- Menu Principal ----");
@@ -41,42 +43,20 @@ public class LogisticaJH {
                     break;
 
                 case 2:
-                    System.out.println("\n--- MAPA DE DISPONIBILIDAD (X=Ocupado, .=Libre) ---");
-                    for (int i = 0; i < 10; i++) {
-                        for (int j = 0; j < 10; j++) {
-                            System.out.print(areaContenedores[i][j] == null ? " . " : " X ");
-                        }
-                        System.out.println();
-                    }
+                    String[] paises = { "China", "USA", "Colombia", "España", "Brasil" };
+                    for (int f = 0; f < 10; f++) {
+                        for (int c = 0; c < 10; c++) {
+                            // Solo llena si el espacio está vacío
+                            if (areaContenedores[f][c] == null) {
+                                String idRand = "ID-" + (aleatorio.nextInt(9000) + 1000);
+                                double pesoRand = 5 + (30 * aleatorio.nextDouble()); // Peso entre 5 y 35
+                                String origenRand = paises[aleatorio.nextInt(paises.length)];
 
-                    System.out.println("Ingrese el ID del contenedor:");
-                    String idContenedor = leer.next();
-
-                    System.out.println("Ingrese el peso del contenedor:");
-                    double pesoContenedor = leer.nextDouble();
-
-                    System.out.println("Ingrese el origen del contenedor:");
-                    String origenContenedor = leer.next();
-
-                    System.out.println("Ingrese la columna donde desea ubicarlo:");
-                    int columna = leer.nextInt();
-
-                    boolean agregadoContenedor = false;
-
-                    for (int fila = 9; fila >= 0; fila--) {
-                        if (areaContenedores[fila][columna] == null) {
-                            areaContenedores[fila][columna] = new Contenedor(idContenedor, pesoContenedor,
-                                    origenContenedor);
-
-                            System.out.println("Contenedor agregado en fila " + fila + ", columna " + columna);
-                            agregadoContenedor = true;
-                            break;
+                                areaContenedores[f][c] = new Contenedor(idRand, pesoRand, origenRand);
+                            }
                         }
                     }
-
-                    if (!agregadoContenedor) {
-                        System.out.println("La columna está llena.");
-                    }
+                    System.out.println("¡Operación exitosa! El patio de 10x10 está lleno.");
                     break;
 
                 case 3:
