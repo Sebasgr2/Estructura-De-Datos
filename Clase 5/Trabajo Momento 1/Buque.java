@@ -14,5 +14,11 @@ public class Buque{
         this.nombre = nombre;
     }
 
+    @Override
+    public String toString() {
+        return "Buque [nombre=" + nombre + "]";
+    }
+
+    
 } 
 
