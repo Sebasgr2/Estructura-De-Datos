@@ -19,18 +19,19 @@ public class LogisticaJH {
             System.out.println("5. Salir");
 
             opcion = leer.nextInt();
+            leer.nextLine();
 
             switch (opcion) {
                 case 1:
                     System.out.println("Ingrese el nombre del buque:");
-                    String nombreBuque = leer.next();
+                    String nombreBuque = leer.nextLine();
 
                     boolean agregado = false;
-
                     for (int i = 0; i < buque.length; i++) {
                         if (buque[i] == null) {
                             buque[i] = new Buque(nombreBuque);
                             System.out.println("Buque agregado: " + buque[i]);
+                            agregado = true;
                             break;
                         }
                     }
@@ -40,6 +41,14 @@ public class LogisticaJH {
                     break;
 
                 case 2:
+                    System.out.println("\n--- MAPA DE DISPONIBILIDAD (X=Ocupado, .=Libre) ---");
+                    for (int i = 0; i < 10; i++) {
+                        for (int j = 0; j < 10; j++) {
+                            System.out.print(areaContenedores[i][j] == null ? " . " : " X ");
+                        }
+                        System.out.println();
+                    }
+
                     System.out.println("Ingrese el ID del contenedor:");
                     String idContenedor = leer.next();
 
@@ -81,7 +90,27 @@ public class LogisticaJH {
                     }
                     System.out.println("Peso total de los contenedores: " + pesoTotal);
                     break;
+
+                case 4:
+                    System.out.println("Ingrese el origen para listar los contenedores:");
+                    String origenBusqueda = leer.next();
+
+                    System.out.println("Contenedores con origen " + origenBusqueda + ":");
+                    for (int fila = 0; fila < areaContenedores.length; fila++) {
+                        for (int col = 0; col < areaContenedores[fila].length; col++) {
+                            if (areaContenedores[fila][col] != null
+                                    && areaContenedores[fila][col].getOrigen().equalsIgnoreCase(origenBusqueda)) {
+                                System.out.println(areaContenedores[fila][col]);
+                            }
+                        }
+                    }
+                    break;
+
+                case 5:
+                    System.out.println("Saliendo del programa...");
+                    break;
             }
+
         }
     }
 
