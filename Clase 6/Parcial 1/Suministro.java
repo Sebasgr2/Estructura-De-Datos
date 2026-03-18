@@ -1,43 +1,41 @@
 public class Suministro {
-    
-        private String id;
-        private int nivelEnergia;
-        private String prioridad;
-        
-        public Suministro(String id, int nivelEnergia, String prioridad) {
-            this.id = id;
-            this.nivelEnergia = nivelEnergia;
-            this.prioridad = prioridad;
-        }
+    private String id;
+    private int nivelEnergia;
+    private String prioridad;
 
-        public String getId() {
-            return id;
-        }
+    public Suministro(String id, int nivelEnergia, String prioridad) {
+        this.id = id;
+        this.nivelEnergia = nivelEnergia;
+        this.prioridad = prioridad;
+    }
 
-        public void setId(String id) {
-            this.id = id;
-        }
+    public String getId() {
+        return id;
+    }
 
-        public int getNivelEnergia() {
-            return nivelEnergia;
-        }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-        public void setNivelEnergia(int nivelEnergia) {
-            this.nivelEnergia = nivelEnergia;
-        }
+    public int getNivelEnergia() {
+        return nivelEnergia;
+    }
 
-        public String getPrioridad() {
-            return prioridad;
-        }
+    public void setNivelEnergia(int nivelEnergia) {
+        this.nivelEnergia = nivelEnergia;
+    }
 
-        public void setPrioridad(String prioridad) {
-            this.prioridad = prioridad;
-        }
+    public String getPrioridad() {
+        return prioridad;
+    }
 
-        @Override
-        public String toString() {
-            return "Suministro [id=" + id + ", nivelEnergia=" + nivelEnergia + ", prioridad=" + prioridad + "]";
-        }
+    public void setPrioridad(String prioridad) {
+        this.prioridad = prioridad;
+    }
 
-        
+    @Override
+    public String toString() {
+        return "Suministro [id=" + id + ", nivelEnergia=" + nivelEnergia + ", prioridad=" + prioridad + "]";
+    }
 }
+    
