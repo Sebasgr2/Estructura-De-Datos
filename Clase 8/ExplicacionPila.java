@@ -16,5 +16,13 @@ public class ExplicacionPila {
 
         //Mostrar el elemento que se encuentra en la pila
         System.out.println(obpila);
+    
+        //Mostrar sin remover el tope de la pila
+        System.out.println("El tope de la pila es: " + obpila.peek());
+
+        //Validar si la pila esta vacia o llena
+        System.out.println("La pila esta vacia " + obpila.empty());
+
+        //
     }
 }
