@@ -1,6 +1,4 @@
-import java.util.Stack;
-
-public class ExplicacionPila {
+/*public class ExplicacionPila {
     
     public static void main(String[] args) {
         
@@ -25,4 +23,4 @@ public class ExplicacionPila {
 
         //
     }
-}
+}*/
