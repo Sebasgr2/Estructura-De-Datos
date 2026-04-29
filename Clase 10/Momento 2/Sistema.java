@@ -8,6 +8,14 @@ public class Sistema {
         m[0] = new Contenedor("C1", 240, 1);
         m[1] = new Contenedor("C2", 120, 2);
         m[2] = new Contenedor("C3", 100, 1);
+        m[3] = new Contenedor("C4", 300, 2);
+        m[4] = new Contenedor("C5", 150, 1);
+        m[5] = new Contenedor("C6", 200, 2);
+        m[6] = new Contenedor("C7", 180, 1);
+        m[7] = new Contenedor("C8", 220, 2);
+        m[8] = new Contenedor("C9", 130, 1);
+        m[9] = new Contenedor("C10", 170, 2);
+        
     }
 
     public static double pesoTotal(Contenedor[] m) {
@@ -15,7 +23,7 @@ public class Sistema {
 
         for (int i = 0; i < m.length; i++) {
             if (m[i] != null) {
-                total += m[i].peso;
+                total += m[i].getPeso();
             }
         }
 
@@ -45,7 +53,7 @@ public class Sistema {
             aux.push(pila.pop());
         }
 
-        System.out.println("Eliminado: " + pila.pop().id);
+        System.out.println("Eliminado: " + pila.pop().getId());
 
         while (!aux.isEmpty()) {
             pila.push(aux.pop());
@@ -55,7 +63,7 @@ public class Sistema {
     public static void main(String[] args) {
 
         Contenedor[] manifiesto = new Contenedor[10];
-        Contenedor[][] patio = new Contenedor[5][5];
+        Contenedor[][] patio = new Contenedor[3][3];
         Queue<Contenedor> inspeccion = new LinkedList<>();
         Stack<Contenedor> buque = new Stack<>();
 
@@ -76,7 +84,7 @@ public class Sistema {
                 ubicarEnPatio(patio, c);
 
                 // Cola (FIFO) - prioridad alta
-                if (c.prioridad == 1) {
+                if (c.getPrioridad() == 1) {
                     inspeccion.add(c);
                 }
 
@@ -90,13 +98,13 @@ public class Sistema {
         // 4. Inspección (cola)
         while (!inspeccion.isEmpty()) {
             Contenedor c = inspeccion.poll();
-            System.out.println("Inspeccionando: " + c.id);
+            System.out.println("Inspeccionando: " + c.getId());
         }
 
         // 5. Buque (pila)
         while (!buque.isEmpty()) {
             Contenedor c = buque.pop();
-            System.out.println("Descargando: " + c.id);
+            System.out.println("Descargando: " + c.getId());
         }
     }
 }
