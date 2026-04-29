@@ -1,8 +1,8 @@
 public class Contenedor {
 
-    String id;
-    double peso;
-    int prioridad;
+    private String id;
+    private double peso;
+    private int prioridad;
 
     public Contenedor(String id, double peso, int prioridad) {
         this.id = id;

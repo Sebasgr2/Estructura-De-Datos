@@ -38,7 +38,5 @@ public class HistorialNavegacion {
             System.out.println("Código: [" + key + "] -> Producto: [" + value + "]");
         });
 
-
-        
     }
 }
