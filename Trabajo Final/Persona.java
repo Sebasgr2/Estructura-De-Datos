@@ -1,6 +1,6 @@
-public public abstract class Persona {
+public abstract class Persona {
 
-    //Atributos
+    // Atributos
     protected String nombre;
     protected String id;
     protected String email;
@@ -10,13 +10,13 @@ public public abstract class Persona {
     }
 
     // Constructor
-    public Persona(String nombre, int id, String email) {
+    public Persona(String nombre, String id, String email) {
         this.nombre = nombre;
         this.id = id;
         this.email = email;
     }
 
-    //Getters y Setters
+    // Getters y setters
     public String getNombre() {
         return nombre;
     }
@@ -25,11 +25,11 @@ public public abstract class Persona {
         this.nombre = nombre;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -41,7 +41,7 @@ public public abstract class Persona {
         this.email = email;
     }
     
-    //Metodo toString 
+    // Método toString
     @Override
     public String toString() {
         return "Persona{" +

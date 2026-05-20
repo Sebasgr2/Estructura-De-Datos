@@ -99,8 +99,6 @@ public class Materia {
         }
     }
 
-    }
-
     public String getCodigo() {
         return codigo;
     }
@@ -171,3 +169,4 @@ public class Materia {
                 '}';
     }
 
+}
