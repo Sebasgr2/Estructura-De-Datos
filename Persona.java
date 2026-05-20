@@ -1,8 +1,8 @@
-public abstract class Persona {
+public public abstract class Persona {
 
     //Atributos
     protected String nombre;
-    protected int id;
+    protected String id;
     protected String email;
 
     // Constructor por defecto
