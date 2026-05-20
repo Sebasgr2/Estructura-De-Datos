@@ -108,3 +108,6 @@ public class Sistema {
         }
     }
 }
+
+
+//java -cp bin Sistema
