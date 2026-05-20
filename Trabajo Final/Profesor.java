@@ -78,14 +78,6 @@ public class Profesor extends Persona {
 
     public void setMaterias(LinkedList<Materia> materias) {
         this.materias = materias;
-    }salario;
-
-    public LinkedList<Materia> getMaterias() {
-        return materias;
-    }
-
-    public void setMaterias(LinkedList<Materia> materias) {
-        this.materias = materias;
     }
 
 
