@@ -20,8 +20,10 @@ public class Materia {
         this.preRequisitos = new LinkedList<>();
         this.inscritos = new LinkedList<>();
         this.colaEspera = new LinkedList<>();
+    }
 
-        public Materia(String codigo, String nombre, int cupos, int creditos, int dia, int hora) {
+    // Constructor con parámetros
+    public Materia(String codigo, String nombre, int cupos, int creditos, int dia, int hora) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.cupos = cupos;
@@ -34,13 +36,13 @@ public class Materia {
     }
 
     // Agrega un pre-requisito a la lista
-        public void agregarPreRequisito(String materia) {
+    public void agregarPreRequisito(String materia) {
         preRequisitos.add(materia);
         System.out.println("Pre requisito agregado: " + materia);
     }
- 
+
     // Muestra todos los pre-requisitos
-        public void mostrarPreRequisitos() {
+    public void mostrarPreRequisitos() {
         System.out.println("Pre requisitos de " + nombre + ":");
         for (String m : preRequisitos) {
             System.out.println("  - " + m);
@@ -48,12 +50,12 @@ public class Materia {
     }
 
     // Verifica si hay cupos
-        public boolean tieneCupo() {
+    public boolean tieneCupo() {
         return inscritos.size() < cupos;
     }
 
     // Inscribe a un estudiante o lo agrega a la cola de espera si no hay cupos
-     public void inscribirEstudiante(Estudiante estudiante) {
+    public void inscribirEstudiante(Estudiante estudiante) {
         if (tieneCupo()) {
             inscritos.add(estudiante);
             estudiante.agregarMateria(this);
@@ -64,7 +66,8 @@ public class Materia {
         }
     }
 
-    // Cancela la inscripción de un estudiante y mueve al siguiente de la cola si es necesario
+    // Cancela la inscripción de un estudiante y mueve al siguiente de la cola si es
+    // necesario
     public void cancelarInscripcion(Estudiante estudiante) {
         if (inscritos.remove(estudiante)) {
             estudiante.eliminarMateria(this);
@@ -81,7 +84,7 @@ public class Materia {
     }
 
     // Muestra los estudiantes inscritos
-     public void mostrarInscritos() {
+    public void mostrarInscritos() {
         System.out.println("Inscritos en " + nombre + ":");
         for (Estudiante e : inscritos) {
             System.out.println("  - " + e.getNombre());
@@ -89,15 +92,13 @@ public class Materia {
     }
 
     // Muestra la cola de espera
-     public void mostrarCola() {
+    public void mostrarCola() {
         System.out.println("Cola de espera en " + nombre + ":");
         for (Estudiante e : colaEspera) {
             System.out.println("  - " + e.getNombre());
         }
     }
 
-    
-    
     }
 
     public String getCodigo() {
@@ -169,4 +170,4 @@ public class Materia {
                 ", creditos=" + creditos +
                 '}';
     }
-}
+
